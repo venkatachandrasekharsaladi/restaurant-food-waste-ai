@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive academic showcase of a three-agent restaurant demand forecasting and preparation planning system.">
+  <title>PlateWise AI — Restaurant Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#top"><span class="brand-mark">P</span><span>platewise<span class="brand-ai">.ai</span></span></a>
+      <div class="side-label">PROJECT MAP</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="active" href="#overview"><span>◫</span> Overview</a>
+        <a href="#workflow"><span>⌘</span> Agent workflow</a>
+        <a href="#agents"><span>✳</span> The agents</a>
+        <a href="#evidence"><span>▥</span> Model evidence</a>
+        <a href="#limits"><span>◉</span> Scope & limits</a>
+      </nav>
+      <div class="side-bottom"><div class="status-dot"></div><span>ACADEMIC PROJECT</span><p>AI-assisted restaurant demand and preparation planning.</p></div>
+    </aside>
+
+    <main id="top">
+      <header class="topbar"><div class="crumb">PROJECTS <span>/</span> RESTAURANT INTELLIGENCE</div><a class="github-link" href="https://github.com/" target="_blank" rel="noreferrer">GitHub repository ↗</a></header>
+      <section class="hero" id="overview">
+        <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-line"></span> THREE-AGENT AI SYSTEM</div>
+          <h1>Less guesswork.<br><em>Smarter</em> preparation.</h1>
+          <p class="hero-lede">A modular AI prototype that forecasts meal demand, turns predictions into preparation plans, and explains operational signals.</p>
+          <div class="hero-actions"><a class="primary-btn" href="#workflow">Explore the system <span>↓</span></a><a class="text-btn" href="Agent123.ipynb" download>Download notebook ↗</a></div>
+        </div>
+        <div class="hero-art" aria-label="Three connected AI agent stages">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="orbit-core"><span>PW</span><small>INTELLIGENCE<br>ENGINE</small></div>
+          <div class="orbit-node node-a"><b>01</b><span>FORECAST</span></div><div class="orbit-node node-b"><b>02</b><span>PLAN</span></div><div class="orbit-node node-c"><b>03</b><span>EXPLAIN</span></div>
+          <div class="art-caption">PREDICT <i>→</i> PREPARE <i>→</i> MONITOR</div>
+        </div>
+      </section>
+
+      <section class="metrics" aria-label="Model validation metrics">
+        <div class="metric-card"><span class="metric-label">SELECTED MODEL</span><strong>CatBoost</strong><small>Demand forecasting agent</small></div>
+        <div class="metric-card"><span class="metric-label">VALIDATION MAE</span><strong>80.42</strong><small>Orders · lower is better</small></div>
+        <div class="metric-card"><span class="metric-label">VALIDATION RMSE</span><strong>165.70</strong><small>Orders · lower is better</small></div>
+        <div class="metric-card accent-card"><span class="metric-label">VALIDATION WAPE</span><strong>32.42<span>%</span></strong><small>Chronological holdout</small></div>
+      </section>
+
+      <section class="section" id="workflow">
+        <div class="section-head"><div><div class="eyebrow">HOW IT WORKS</div><h2>One pipeline. Three focused agents.</h2></div><p>Each agent has a distinct responsibility and passes useful outputs to the next stage.</p></div>
+        <div class="pipeline">
+          <article class="pipeline-step"><div class="step-top"><span>01 / INPUT</span><span class="step-icon">▤</span></div><h3>Restaurant data</h3><p>Historical meal orders, prices, promotions and fulfilment-centre attributes.</p><div class="step-foot">DATA PREPARATION</div></article>
+          <div class="connector"><span>→</span></div>
+          <article class="pipeline-step active-step"><div class="step-top"><span>02 / PREDICT</span><span class="step-icon">⌁</span></div><h3>Demand forecast</h3><p>CatBoost estimates the expected number of orders for each meal context.</p><div class="step-foot">AGENT 01</div></article>
+          <div class="connector"><span>→</span></div>
+          <article class="pipeline-step"><div class="step-top"><span>03 / PLAN</span><span class="step-icon">▦</span></div><h3>Preparation plan</h3><p>Forecast demand is adjusted by a safety buffer and usable stock.</p><div class="step-foot">AGENT 02</div></article>
+          <div class="connector"><span>→</span></div>
+          <article class="pipeline-step"><div class="step-top"><span>04 / REVIEW</span><span class="step-icon">◎</span></div><h3>Explain & monitor</h3><p>SHAP explains model behaviour; monitoring flags potential surplus or shortfall.</p><div class="step-foot">AGENT 03</div></article>
+        </div>
+      </section>
+
+      <section class="section" id="agents">
+        <div class="section-head"><div><div class="eyebrow">THE AGENT LAYERS</div><h2>Three agents, clearly separated.</h2></div><p>Select an agent to see its role, inputs, processing and outputs.</p></div>
+        <div class="agent-layout">
+          <div class="agent-tabs" role="tablist" aria-label="Select agent">
+            <button class="agent-tab selected" role="tab" aria-selected="true" data-agent="0"><span class="tab-number">01</span><span><b>Demand forecasting</b><small>CatBoost regression</small></span><span class="tab-arrow">↗</span></button>
+            <button class="agent-tab" role="tab" aria-selected="false" data-agent="1"><span class="tab-number">02</span><span><b>Preparation planning</b><small>Inventory-aware rules</small></span><span class="tab-arrow">↗</span></button>
+            <button class="agent-tab" role="tab" aria-selected="false" data-agent="2"><span class="tab-number">03</span><span><b>XAI & waste monitoring</b><small>SHAP + operational flags</small></span><span class="tab-arrow">↗</span></button>
+          </div>
+          <article class="agent-detail" aria-live="polite"><div class="detail-kicker" id="agent-kicker">AGENT 01 · PREDICTION</div><h3 id="agent-title">Demand Forecasting Agent</h3><p id="agent-description">Predicts expected meal orders from historical demand and contextual restaurant features.</p>
+            <div class="detail-grid"><div><span>INPUTS</span><p id="agent-inputs">Meal and centre IDs, week, price, cuisine, centre type, promotion flags and operating area.</p></div><div><span>PROCESS</span><p id="agent-process">Trains and compares regression models using a chronological train/validation split; CatBoost is selected.</p></div><div><span>OUTPUT</span><p id="agent-output">Non-negative predicted order quantity for each validation record.</p></div><div><span>WHY IT MATTERS</span><p id="agent-value">Provides a demand estimate to support preparation decisions instead of relying only on intuition.</p></div></div>
+            <div class="detail-note" id="agent-note">Validation: MAE 80.42 · RMSE 165.70 · WAPE 32.42%.</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section evidence-section" id="evidence">
+        <div class="section-head"><div><div class="eyebrow">MODEL EVIDENCE</div><h2>What the model learned.</h2></div><p>Global SHAP importance ranks features by their average absolute contribution to model output.</p></div>
+        <div class="evidence-grid"><div class="chart-card"><div class="chart-title"><b>Top feature importance</b><span>MEAN |SHAP|</span></div>
+          <div class="bar-list">
+            <div class="bar-row"><label>Meal ID</label><div class="bar-track"><i style="width:100%"></i></div><b>125.97</b></div>
+            <div class="bar-row"><label>Checkout price</label><div class="bar-track"><i style="width:53.9%"></i></div><b>67.94</b></div>
+            <div class="bar-row"><label>Centre ID</label><div class="bar-track"><i style="width:44.8%"></i></div><b>56.40</b></div>
+            <div class="bar-row"><label>Email promotion</label><div class="bar-track"><i style="width:32.0%"></i></div><b>40.36</b></div>
+            <div class="bar-row"><label>Homepage featured</label><div class="bar-track"><i style="width:16.7%"></i></div><b>21.08</b></div>
+            <div class="bar-row"><label>Cuisine</label><div class="bar-track"><i style="width:14.0%"></i></div><b>17.63</b></div>
+          </div><p class="chart-foot">Higher mean absolute SHAP value indicates greater average influence on model predictions; it does not indicate positive or negative direction.</p>
+        </div>
+        <div class="split-card"><div class="mini-label">VALIDATION DESIGN</div><h3>Respecting time order.</h3><p>The data is split by week to evaluate on later observations rather than randomly mixing past and future.</p><div class="timebar"><div class="train">TRAINING <b>Weeks 1–116</b></div><div class="valid">VALIDATION <b>Weeks 117–145</b></div></div><div class="split-foot"><span>Earlier period</span><span>Later holdout period</span></div><div class="mini-stat"><b>575</b><span>Best CatBoost iteration<br>(576 trees)</span></div></div></div>
+      </section>
+
+      <section class="section planner-section" id="planner-demo">
+        <div class="section-head"><div><div class="eyebrow">TRY THE PLANNING LOGIC</div><h2>From forecast to kitchen quantity.</h2></div><p>A small interactive illustration of Agent 02's preparation calculation.</p></div>
+        <div class="planner-card"><div class="planner-controls"><label>Forecast demand <input id="demand" type="number" min="0" max="10000" value="100"></label><label>Usable stock <input id="stock" type="number" min="0" max="10000" value="20"></label><label class="range-label">Safety buffer <output id="buffer-value">10%</output><input id="buffer" type="range" min="0" max="50" value="10"></label></div><div class="planner-results"><div><span>TARGET QUANTITY</span><strong id="target-result">110</strong></div><div class="result-highlight"><span>RECOMMENDED TO PREPARE</span><strong id="prepare-result">90</strong></div><div><span>PLANNED AVAILABILITY</span><strong id="availability-result">110</strong></div></div><p class="formula">Target = ceil(forecast × (1 + buffer)) &nbsp;·&nbsp; Prepare = max(0, target − usable stock)</p></div>
+      </section>
+
+      <section class="section limits-section" id="limits"><div class="section-head"><div><div class="eyebrow">RESPONSIBLE INTERPRETATION</div><h2>What this prototype does — and doesn't — claim.</h2></div></div>
+        <div class="limits-grid"><div class="limit-item"><span class="limit-icon">✓</span><div><b>Demand prediction</b><p>Forecasts order demand using the selected CatBoost model and a chronological validation split.</p></div></div><div class="limit-item"><span class="limit-icon">✓</span><div><b>Preparation recommendation</b><p>Calculates target preparation using a configurable safety buffer and available stock.</p></div></div><div class="limit-item caution"><span class="limit-icon">!</span><div><b>Inventory is simulated</b><p>Usable stock in the integrated demonstration results is randomly generated, not sourced from a live inventory system.</p></div></div><div class="limit-item caution"><span class="limit-icon">!</span><div><b>Potential surplus is not measured waste</b><p>The source dataset contains order demand, not actual discarded-food measurements. Surplus/shortfall are estimated operational signals.</p></div></div></div>
+      </section>
+      <footer><div class="brand footer-brand"><span class="brand-mark">P</span><span>platewise<span class="brand-ai">.ai</span></span></div><p>Restaurant Food Waste Prediction & Planning System · Academic prototype</p><a href="Agent123.ipynb" download>Notebook source ↗</a></footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body></html>
