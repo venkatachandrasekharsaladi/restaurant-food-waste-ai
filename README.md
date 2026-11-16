@@ -1,6 +1,6 @@
 # PlateWise AI — Restaurant Food Waste Prediction & Planning System
 
-A small, responsive, static project showcase for explaining the three-agent university project to an academic audience.
+A small, responsive, static project showcase for explaining the Three Agent project to an academic audience.
 
 ## What's included
 
